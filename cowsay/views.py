@@ -26,6 +26,6 @@ def index(request):
 
 def history(request):
     cowsay_list = list(CowsText.objects.all())
-    most_recent = cowsay_list[-10:]
+    most_recent = cowsay_list[-10:][::-1]
 
     return render(request, 'history.html', {'most_recent': most_recent})
